@@ -244,6 +244,86 @@ export default function SponsorPackages() {
             Let&apos;s talk
           </a>
         </motion.p>
+
+        {/* Community Partner */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.85, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-16 relative overflow-hidden"
+          style={{
+            border: "1px solid rgba(94,46,234,0.2)",
+            background: "linear-gradient(135deg, rgba(94,46,234,0.04) 0%, rgba(10,10,20,0.8) 60%, rgba(94,46,234,0.04) 100%)",
+          }}
+        >
+          {/* Top label strip */}
+          <div
+            className="px-8 py-3 flex items-center gap-3 border-b border-[#5e2eea]/10"
+            style={{ background: "rgba(94,46,234,0.06)" }}
+          >
+            <span className="font-mono text-[10px] tracking-widest text-[#5e2eea]/70 uppercase">
+              Community Partner
+            </span>
+            <span className="h-px flex-1 bg-[#5e2eea]/10" />
+            <span className="font-mono text-[10px] tracking-widest text-white/20 uppercase">
+              Non-Monetary · Cross-Promotion
+            </span>
+          </div>
+
+          <div className="p-8 grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+            {/* Left — description */}
+            <div className="lg:col-span-2">
+              <h3 className="font-syne font-bold text-white text-xl mb-3 leading-tight">
+                Partner with us.{" "}
+                <span className="text-[#5e2eea]">Grow together.</span>
+              </h3>
+              <p className="font-inter text-white/50 text-base leading-relaxed">
+                As a Community Partner, you&apos;ll get brand visibility across our posters
+                and social media, direct reach to college students, shoutouts during the
+                event, and an opportunity to grow your community through cross-promotion.
+              </p>
+
+              {/* Perks row */}
+              <div className="flex flex-wrap gap-3 mt-5">
+                {[
+                  "Poster visibility",
+                  "Social media features",
+                  "Live event shoutout",
+                  "Cross-promotion",
+                  "Student audience reach",
+                ].map((perk, i) => (
+                  <span
+                    key={i}
+                    className="flex items-center gap-2 font-inter text-xs text-white/50 px-3 py-1.5 rounded-sm"
+                    style={{ border: "1px solid rgba(94,46,234,0.18)", background: "rgba(94,46,234,0.05)" }}
+                  >
+                    <span className="w-1 h-1 rounded-full bg-[#5e2eea] shrink-0" />
+                    {perk}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Right — CTA */}
+            <div className="flex flex-col gap-3 lg:items-end">
+              <p className="font-inter text-white/30 text-xs leading-relaxed lg:text-right">
+                Ideal for student clubs, tech communities, dev groups, and local orgs.
+              </p>
+              <a
+                href="https://wa.me/919732548768?text=Hi%2C%20I%27m%20interested%20in%20becoming%20a%20Community%20Partner%20for%20Draaksh%20TechQuest%202026"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor-label="Partner"
+                className="group inline-flex items-center gap-3 px-6 py-3.5 font-grotesk font-semibold text-sm tracking-wide text-[#5e2eea] border border-[#5e2eea]/30 hover:border-[#5e2eea]/70 hover:bg-[#5e2eea]/08 transition-all duration-300"
+              >
+                Become a Community Partner
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none" className="opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
+                  <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
